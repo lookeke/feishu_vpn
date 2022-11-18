@@ -1,0 +1,86 @@
+{
+  "name": "feishu_vpn",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "feishu-vpn single page web application",
+  "author": {
+    "name": "Rococo",
+    "email": "xiconz@qq.com",
+    "url": "https://github.com/lookeke"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=8",
+    "yarn": ">=1",
+    "pnpm": ">=6"
+  },
+  "keywords": [
+    "vpn"
+  ],
+  "main": "./src/main.tsx",
+  "homepage": "https://github.com/lookeke/feishu_vpn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lookeke/feishu_vpn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lookeke/feishu_vpn/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "prepare": "husky install",
+    "lint": "eslint src/**/**.ts src/**/**.tsx",
+    "lint:fix": "eslint --cache src --ext ts,tsx --fix"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "prettier --write eslint --fix"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.1.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/eslint-parser": "^7.19.1",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.10.14",
+    "@tauri-apps/cli": "^1.1.0",
+    "@types/node": "^18.7.10",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "@vitejs/plugin-react": "^2.0.0",
+    "eslint": "^8.27.0",
+    "eslint-config-alloy": "^4.7.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-hooks-addons": "^0.3.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-typescript-enum": "^2.1.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.19",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.2"
+  }
+}
