@@ -2,7 +2,7 @@
   "name": "feishu_vpn",
   "private": true,
   "version": "0.1.0",
-  "type": "module",
+  "type": "commonjs",
   "description": "feishu-vpn single page web application",
   "author": {
     "name": "Rococo",
