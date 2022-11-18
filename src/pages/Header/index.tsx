@@ -8,16 +8,32 @@ import logo from '@/assets/images/logo.webp' // logo
 
 // nav items 路由
 const navItems: INavItems[] = [
-	{ id: 'index', label: '首页', link: '/' },
-	{ id: 'about', label: '关于飞鼠', link: '/about' },
-	{ id: 'userScenarios', label: '用户案例', link: '/userScenarios' },
-	{ id: 'contactus', label: '联系我们', link: '/contactus' },
+	{
+		id: 'index',
+		label: '首页',
+		link: '/',
+	},
+	{
+		id: 'about',
+		label: '关于飞鼠',
+		link: '/about',
+	},
+	{
+		id: 'userScenarios',
+		label: '用户案例',
+		link: '/userScenarios',
+	},
+	{
+		id: 'contactus',
+		label: '联系我们',
+		link: '/contactus',
+	},
 ]
 
 export default function Header() {
 	return (
 		<Box
-			component="header"
+			component='header'
 			sx={{
 				mt: '19px',
 				height: '42px',
@@ -25,13 +41,13 @@ export default function Header() {
 			}}
 		>
 			{/* logo */}
-			<Box className="nav-logo">
-				<img alt="Logo" src={logo} />
+			<Box className='nav-logo'>
+				<img alt='Logo' src={logo} />
 			</Box>
 
 			{/* nav */}
 			<List
-				className="nav-items"
+				className='nav-items'
 				sx={{
 					display: 'flex',
 					ml: '360px',
@@ -53,7 +69,7 @@ export default function Header() {
 
 			{/* 分割线 */}
 			<Box
-				className="nav-separate"
+				className='nav-separate'
 				sx={{
 					m: '0 30px',
 					height: '19px',
@@ -63,8 +79,16 @@ export default function Header() {
 			/>
 
 			{/* 邮件组 */}
-			<Box className="nav-email" sx={{ display: 'flex' }}>
-				<Box component="img" sx={{ width: '24px', height: '24px' }} src={email} alt="email" />
+			<Box className='nav-email' sx={{ display: 'flex' }}>
+				<Box
+					alt='email'
+					component='img'
+					src={email}
+					sx={{
+						width: '24px',
+						height: '24px',
+					}}
+				/>
 				<Typography>xinghuan@xinghuankj.com</Typography>
 			</Box>
 

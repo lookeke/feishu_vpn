@@ -11,9 +11,9 @@ export default function Home() {
 		<Layout>
 			<Header />
 
-			<Box component="main">
+			<Box component='main'>
 				{/* 标题内容 */}
-				<Box component="cite">
+				<Box component='cite'>
 					<Typography
 						sx={{
 							fontWeight: 'bold',
@@ -22,7 +22,7 @@ export default function Home() {
 					>
 						使用飞鼠，
 						<Typography
-							component="span"
+							component='span'
 							sx={{
 								color: '#6D77BB',
 								fontWeight: 'bold',
@@ -37,7 +37,12 @@ export default function Home() {
 
 				{/* 介绍 */}
 				<Box>
-					<Typography sx={{ color: '#888CAB', lineHeight: '18.75px' }}>
+					<Typography
+						sx={{
+							color: '#888CAB',
+							lineHeight: '18.75px',
+						}}
+					>
 						2015-2022，99.8%超高好评率。飞鼠帮您跨越重重阻拦，解锁全部海外APP和网站。无需注册，无需付费，下载即用，一键连接，永久免费。
 					</Typography>
 				</Box>
@@ -66,11 +71,25 @@ export default function Home() {
 
 				{/* 观看小视频 */}
 				<Box>
-					<Box component="img" src={frame} alt="frame" />
+					<img alt='frame' src={frame} />
+					{/* <img alt="frame" component="img" src={frame} /> */}
 				</Box>
 
-				<Box sx={{ width: '532px', height: '532px' }}>
-					<Box component="img" src={pc} alt="pc" sx={{ width: '100%', height: '100%' }} />
+				<Box
+					sx={{
+						width: '532px',
+						height: '532px',
+					}}
+				>
+					<Box
+						alt='pc'
+						component='img'
+						src={pc}
+						sx={{
+							width: '100%',
+							height: '100%',
+						}}
+					/>
 				</Box>
 			</Box>
 		</Layout>
