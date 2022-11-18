@@ -7,6 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 			sx={{
 				maxWidth: '1920px',
 				height: 'auto',
+				m: '0 auto',
 			}}
 		>
 			{children}

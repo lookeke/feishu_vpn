@@ -1,6 +1,6 @@
 // nav列表
 export type INavItems = {
-	id: number
+	id: string
 	label: string
 	link: string
 }

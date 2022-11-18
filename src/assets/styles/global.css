@@ -1,9 +1,13 @@
 * {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 body {
-	font-size: 16px;
+	width:100vw;
+	height:100vh;
 	font-family: 'Microsoft YaHei', 'Amy', sans-serif;
+	font-size: 16px;
+	color: #fff;
+	background-color: #17192e;
 }

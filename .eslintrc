@@ -53,12 +53,14 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "crlf"
+        "endOfLine": "lf"
       },
       {
         "usePrettierrc": true
       }
     ],
+
+
     // 关闭分号
     "semi": [
       0
@@ -93,11 +95,11 @@
       "error",
       "multiline"
     ],
-    // 强制 jsx 一行只放2个 prop
+    // 强制 jsx 一行只放1个 prop
     "react/jsx-max-props-per-line": [
       "error",
       {
-        "maximum": 2
+        "maximum": 1
       }
     ],
     // 强制 prop 缩进
