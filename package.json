@@ -1,7 +1,7 @@
 {
   "name": "feishu_vpn",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "commonjs",
   "description": "feishu-vpn single page web application",
   "author": {
@@ -37,7 +37,7 @@
     "lint:fix": "eslint --cache src --ext ts,tsx --fix"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "prettier --write eslint --fix"
+    "*.{js,jsx,ts,tsx}": "prettier --write"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.1.0",
