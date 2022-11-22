@@ -1,0 +1,32 @@
+@import '../../config/config';
+
+main {
+	position  : relative;
+	width     : $width;
+	max-width : $max-width;
+	height    : auto;
+	margin    : 0 auto;
+}
+
+.main {
+	&-pc {
+		position : absolute;
+		top      : -150px;
+		right    : 0;
+
+		&-img {
+			position  : absolute;
+			right     : 0;
+			z-index   : 2;
+			transform : translateX(11%);
+		}
+
+		&-bc {
+			position  : absolute;
+			top       : 45px;
+			right     : -45px;
+			z-index   : 1;
+			transform : translateX(15%);
+		}
+	}
+}

@@ -17,7 +17,6 @@
 		"alloy/react",
 		"alloy/typescript",
 		// 'plugin:react/recommended',
-		"plugin:prettier/recommended",
 		"plugin:typescript-enum/recommended"
 	],
 	"plugins": [
@@ -26,8 +25,7 @@
 		"react-hooks-addons",
 		"simple-import-sort",
 		"import",
-		"typescript-enum",
-		"prettier"
+		"typescript-enum"
 	],
 	"globals": {
 		"JSX": true,
@@ -50,28 +48,19 @@
 		}
 	},
 	"rules": {
-		"prettier/prettier": [
-			"warn",
-			{
-				"endOfLine": "lf"
-			},
-			{
-				"usePrettierrc": true
-			}
-		],
 		// 文件末尾插入换行符号\n, 这样才符合LF标准，CRLF标准需要去除
 		"eol-last": [
 			"error",
 			"always"
 		],
-//		// 设置代码上行与下行最大的空行
-//		"no-multiple-empty-lines": [
-//			"error",
-//			{
-//				"max": 2,
-//				"maxBOF": 1
-//			}
-//		],
+		//		// 设置代码上行与下行最大的空行
+		//		"no-multiple-empty-lines": [
+		//			"error",
+		//			{
+		//				"max": 2,
+		//				"maxBOF": 1
+		//			}
+		//		],
 		// 可以展开或不展开对象属性
 		"object-curly-newline": [
 			"error",
@@ -87,10 +76,15 @@
 			}
 		],
 		// 引号
-		"quotes": [
-			"error",
-			"single"
-		],
+//		"quotes": [
+//			"error",
+//			"single"
+//		],
+		// JSX 属性引号 单引号: prefer-single, 双引号: prefer-double
+//		"jsx-quotes": [
+//			"error",
+//			"prefer-double"
+//		],
 		// 三元换行
 		"multiline-ternary": [
 			"error",
@@ -151,11 +145,11 @@
 				"maximum": 2
 			}
 		],
-//		// 强制 prop 缩进,启用此项必须关闭prettie useTab选项
-//		"react/jsx-indent-props": [
-//			"off",
-//			2
-//		],
+		//		// 强制 prop 缩进,启用此项必须关闭prettie useTab选项
+		//		"react/jsx-indent-props": [
+		//			"off",
+		//			2
+		//		],
 		// 强制 prop 排序
 		"react/jsx-sort-props": [
 			"error",

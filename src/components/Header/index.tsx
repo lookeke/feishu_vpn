@@ -2,9 +2,9 @@ import './index.scss'
 
 import { Box, Button, List, ListItem, Typography } from '@mui/material'
 
-import type { INavItems } from '@/@types'
 import email from '@/assets/images/email.png' // email
 import logo from '@/assets/images/logo.webp' // logo
+import { INavItems } from '@/types'
 
 // nav items 路由
 const navItems: INavItems[] = [
@@ -33,21 +33,20 @@ const navItems: INavItems[] = [
 export default function Header() {
 	return (
 		<Box
-			component='header'
+			component="header"
 			sx={{
-				mt: '19px',
-				height: '42px',
-				lineHeight: '42px',
+				maxWidth: '1920px',
+				mx: 'auto',
 			}}
 		>
 			{/* logo */}
-			<Box className='nav-logo'>
-				<img alt='Logo' src={logo} />
+			<Box className="nav-logo">
+				<img alt="Logo" src={logo} />
 			</Box>
 
 			{/* nav */}
 			<List
-				className='nav-items'
+				className="nav-items"
 				sx={{
 					display: 'flex',
 					ml: '360px',
@@ -60,16 +59,17 @@ export default function Header() {
 						sx={{
 							width: 'auto',
 							fontWeight: 'bold',
+							color: '#fff',
 						}}
 					>
-						{item.label}
+						<Typography variant="subtitle1">{item.label}</Typography>
 					</ListItem>
 				))}
 			</List>
 
 			{/* 分割线 */}
 			<Box
-				className='nav-separate'
+				className="nav-separate"
 				sx={{
 					m: '0 30px',
 					height: '19px',
@@ -79,17 +79,19 @@ export default function Header() {
 			/>
 
 			{/* 邮件组 */}
-			<Box className='nav-email' sx={{ display: 'flex' }}>
+			<Box className="nav-email" sx={{ display: 'flex' }}>
 				<Box
-					alt='email'
-					component='img'
+					alt="email"
+					component="img"
 					src={email}
 					sx={{
 						width: '24px',
 						height: '24px',
 					}}
 				/>
-				<Typography>xinghuan@xinghuankj.com</Typography>
+				<Typography sx={{ ml: '15px', color: '#fff' }} variant="subtitle1">
+					xinghuan@xinghuankj.com
+				</Typography>
 			</Box>
 
 			{/* 下载按钮 */}
@@ -97,6 +99,7 @@ export default function Header() {
 				sx={{
 					width: '125px',
 					height: '48px',
+					ml: '25px',
 					lineHeight: '48px',
 					borderRadius: '10px',
 					background: 'linear-gradient(to right,#1A1D35, #353C71)',

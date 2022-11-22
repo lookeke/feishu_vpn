@@ -1,0 +1,17 @@
+@import '../../config/config';
+
+header {
+	display     : flex;
+	align-items : center;
+	width       : $width;
+	max-width   : $max-width;
+	height      : 42px;
+	margin      : 19px auto 0;
+	line-height : 42px;
+}
+
+.nav {
+	&-logo {
+		line-height : 42px;
+	}
+}

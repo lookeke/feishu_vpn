@@ -12,7 +12,7 @@
 	"quoteProps": "preserve",
 	"requirePragma": false,
 	"singleQuote": true,
-	"jsxSingleQuote": true,
+	"jsxSingleQuote": false,
 	"tabWidth": 2,
 	"singleAttributePerLine": false,
 	"useTabs": true,
