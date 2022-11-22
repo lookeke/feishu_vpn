@@ -33,11 +33,13 @@
 		"preview": "vite preview",
 		"tauri": "tauri",
 		"prepare": "husky install",
-		"lint": "eslint src/**/**.ts src/**/**.tsx",
-		"lint:fix": "eslint --cache src --ext ts,tsx --fix",
+		"eslint": "eslint src/**/**.ts src/**/**.tsx",
+		"eslint:fix": "eslint --cache src --ext ts,tsx --fix",
 		"stylelint": "stylelint src/**/**.{css,scss,sass}",
 		"stylelint:fix": "stylelint src/**/**.{css,scss,sass} --fix",
-		"release": "standard-version -- --no-verify"
+		"release": "standard-version -- --no-verify",
+		"release:major": "standard-version --release-as major -- --no-verify",
+		"release:minor": "standard-version --release-as minor -- --no-verify"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": "prettier --write"

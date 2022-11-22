@@ -4,6 +4,7 @@ module.exports = {
 		{ 'type': 'fix', 'section': '🐛 Bug Fixes | Bug 修复' },
 		{ 'type': 'docs', 'section': '✏️ Documentation | 文档' },
 		{ 'type': 'style', 'section': '💄 Styles | 风格' },
+		{ 'type': 'init', 'section': '🎉 Init | 初始化' },
 		{ 'type': 'refactor', 'section': '♻️ Code Refactoring | 代码重构' },
 		{ 'type': 'perf', 'section': '⚡ Performance Improvements | 性能优化' },
 		{ 'type': 'test', 'section': '✅ Tests | 测试' },
