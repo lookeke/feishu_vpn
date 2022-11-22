@@ -1,3 +1,8 @@
-asda
+const a = '1'
+
 
 export {}
+a
+dasda
+asda
+sas
