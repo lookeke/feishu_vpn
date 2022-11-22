@@ -1,7 +1,7 @@
 {
 	"name": "feishu_vpn",
 	"private": true,
-	"version": "0.1.78",
+	"version": "0.1.79",
 	"type": "commonjs",
 	"description": "feishu-vpn single page web application",
 	"author": {
@@ -37,7 +37,7 @@
 		"lint:fix": "eslint --cache src --ext ts,tsx --fix",
 		"stylelint": "stylelint src/**/**.{css,scss,sass}",
 		"stylelint:fix": "stylelint src/**/**.{css,scss,sass} --fix",
-		"release": "standard-version"
+		"release": "standard-version -- --no-verify"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": "prettier --write"
