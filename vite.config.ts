@@ -35,4 +35,7 @@ export default defineConfig({
 			'@': resolve(__dirname, 'src'),
 		},
 	},
+
+	// 打包目录
+	base: './',
 })

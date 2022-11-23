@@ -20,6 +20,7 @@ export type ICooperativePartner = {
 	alt: string
 }
 
+// 案例列表
 export type IcaseList = {
 	id: number | string
 	label: string
@@ -31,4 +32,13 @@ export type IcaseList = {
 		id: string
 		alt: string
 	}[]
+}
+
+// 联系方式列表
+export type IcompanyProfile = {
+	id: number | string
+	label: string
+	icon: string
+	text: string
+	btnText: string
 }

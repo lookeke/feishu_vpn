@@ -5,14 +5,17 @@ import {
 	Button,
 	Divider,
 	Grid,
+	Input,
 	List,
 	ListItem,
+	Stack,
 	TextField,
 	ThemeProvider,
 	Typography,
 } from '@mui/material'
 
 import cooperativePartner1 from '@/assets/images/cooperativePartner1.webp'
+import email from '@/assets/images/email.webp'
 import frame from '@/assets/images/Frame.png'
 import globalServer from '@/assets/images/globalServer.webp'
 import pc from '@/assets/images/Group 29.webp'
@@ -20,7 +23,14 @@ import imageItem1 from '@/assets/images/imageItem1.webp'
 import item1 from '@/assets/images/item1.webp'
 import pcBackground from '@/assets/images/pcBackage.webp'
 import storeImg from '@/assets/images/store.webp'
-import { IcaseList, ICooperativePartner, IintroduceList } from '@/types'
+import tell from '@/assets/images/tell.webp'
+import FormLabelText from '@/components/FormLabelText'
+import {
+	IcaseList,
+	IcompanyProfile,
+	ICooperativePartner,
+	IintroduceList,
+} from '@/types'
 import {
 	textFieldPrimaryTheme as input,
 	typographySubtitle1Theme as theme,
@@ -104,6 +114,24 @@ const caseList: IcaseList[] = [
 	// uri: item1, },
 ]
 
+// 联系方式列表
+const companyProfile: IcompanyProfile[] = [
+	{
+		id: 0,
+		label: '电话',
+		icon: tell,
+		text: '0371-66464887',
+		btnText: '拨打电话',
+	},
+	{
+		id: 1,
+		label: '邮箱',
+		icon: email,
+		text: '15879649451@126.com',
+		btnText: '发送邮件',
+	},
+]
+
 export default function Main() {
 	return (
 		<Box
@@ -158,19 +186,21 @@ export default function Main() {
 
 				<Box
 					sx={{
+						mt: '87px',
 						width: '360px',
 						height: '64px',
 						lineHeight: '64px',
 						display: 'flex',
 						justifyContent: 'space-between',
+						alignItems: 'center',
 					}}
 				>
 					{/* 下载按钮 */}
 					<Box
 						sx={{
-							mt: '87px',
 							width: '143px',
 							height: '64px',
+							p: 0,
 							lineHeight: '64px',
 							borderRadius: '10px',
 							background: 'linear-gradient(to right,#1A1D35, #353C71)',
@@ -182,7 +212,10 @@ export default function Main() {
 							sx={{
 								fontSize: '20px',
 								color: '#fff',
-								ml: '26px',
+								width: '143px',
+								height: '64px',
+								textAlign: 'center',
+								lineHeight: '64px',
 							}}
 						>
 							免费下载
@@ -190,17 +223,34 @@ export default function Main() {
 					</Box>
 
 					{/* 观看小视频按钮 */}
-					<Box sx={{ ml: '50px' }}>
-						<img
+					<Box
+						sx={{
+							mt: '12px',
+							height: '64px',
+							lineHeight: '64px',
+						}}
+					>
+						<Box
+							sx={{ ml: '50px' }}
+							component="img"
 							alt="frame"
 							src={frame}
 						/>
-						{/* <img alt="frame" component="img" src={frame} /> */}
 					</Box>
 
 					{/* 观看小视频文字 */}
-					<Box sx={{ ml: '15px' }}>
-						<Typography sx={{ fontSize: 20, width: '100px' }}>
+					<Box sx={{ ml: '15px', height: '64px' }}>
+						<Typography
+							sx={{
+								fontSize: 20,
+								width: '130px',
+								color: '#fff',
+								height: '64px',
+								lineHeight: '64px',
+								fontFamily: 'Microsoft YaHei-Bold',
+								fontWeight: 'bold',
+							}}
+						>
 							观看小视频
 						</Typography>
 					</Box>
@@ -596,74 +646,221 @@ export default function Main() {
 						>
 							company profile
 						</Typography>
+
+						<Stack>
+							{/* 联系方式-电话组- */}
+							{companyProfile.map((item) => (
+								<ListItem
+									key={item.id}
+									sx={{
+										mt: '50px',
+										display: 'flex',
+										justifyContent: 'space-between',
+										flexDirection: 'column',
+										alignItems: 'flex-start',
+									}}
+								>
+									{/* 联系方式-图标 */}
+									<Box sx={{ width: '150px' }}>
+										<Box
+											alt="tell"
+											component="img"
+											src={item.icon}
+											sx={{
+												ml: '-20px',
+												width: '13px',
+												height: '13px',
+											}}
+										/>
+										{/* 联系方式-文本 */}
+										<Typography
+											sx={{
+												display: ' inline-block',
+												ml: '6px',
+											}}
+										>
+											{item.label}
+										</Typography>
+									</Box>
+
+									{/* 联系方式-文本 */}
+									<Typography
+										sx={{
+											width: '150px',
+										}}
+									>
+										{item.text}
+									</Typography>
+
+									{/* 联系方式-按钮 */}
+									<Box
+										sx={{
+											mt: '14px',
+										}}
+									>
+										<button
+											style={{
+												width: '100px',
+												height: '32px',
+												border: '1px solid #5560B6',
+												backgroundImage:
+													'linear-gradient(135deg, #1A1D35 0%, #353C71 100%)',
+											}}
+										>
+											<Typography
+												sx={{
+													width: '100px',
+													height: '32px',
+													fontFamily:
+														'Microsoft YaHei-Regular, Microsoft YaHei',
+													fontSize: 14,
+													color: '#fff',
+													lineHeight: '32px',
+												}}
+											>
+												{item.btnText}
+											</Typography>
+										</button>
+									</Box>
+								</ListItem>
+							))}
+						</Stack>
 					</Box>
+
+					{/* 分割线 */}
+					<Divider
+						light={true}
+						orientation="vertical"
+						sx={{ borderColor: '#fff', height: '400px', ml: '344px' }}
+					/>
 
 					{/* 留言 */}
 					<Box
 						sx={{
-							ml: '400px',
-							color: '#fff',
-							display: 'flex',
+							ml: '100px',
 						}}
 					>
-						<Divider
-							light={true}
-							orientation="vertical"
-							sx={{ borderColor: '#fff', height: '400px' }}
-						/>
 						<Box
 							sx={{
-								ml: '103px',
+								color: '#fff',
 							}}
 						>
-							<Box>
-								<Typography
-									sx={{
-										fontFamily: 'Microsoft YaHei-Regular',
-										fontSize: 25,
-									}}
-								>
-									留言
-								</Typography>
-								<Typography
-									sx={{
-										mt: '5px',
-										fontFamily: 'Microsoft YaHei-Regular',
-										fontSize: 14,
-										lineHeight: '16px',
-										letterSpacing: '3px',
-									}}
-								>
-									company
-								</Typography>
-							</Box>
+							<Typography
+								sx={{
+									fontFamily: 'Microsoft YaHei-Regular',
+									fontSize: 25,
+								}}
+							>
+								留言
+							</Typography>
+							<Typography
+								sx={{
+									mt: '5px',
+									fontFamily: 'Microsoft YaHei-Regular',
+									fontSize: 14,
+									lineHeight: '16px',
+									letterSpacing: '3px',
+								}}
+							>
+								company
+							</Typography>
+						</Box>
 
-							{/* 留言-表单 */}
-							<ThemeProvider theme={input}>
+						{/* 留言-表单 */}
+						<ThemeProvider theme={input}>
+							<Box component="form">
 								<Grid
 									container
-									spacing={3}
+									sx={{
+										mt: '65px',
+										width: '750px',
+									}}
 								>
 									<Grid xs={6}>
-										<TextField
-											autoFocus={true}
-											color="primary"
-											id="standard-basic"
-											label="姓名"
-											variant="standard"
-										/>
+										<FormLabelText label="姓名" />
+									</Grid>
 
+									<Grid xs={6}>
+										<FormLabelText label="电话" />
+									</Grid>
+
+									<Grid
+										sx={{ mt: '37px' }}
+										xs={6}
+									>
+										<FormLabelText label="地址" />
+									</Grid>
+
+									<Grid
+										sx={{ mt: '37px' }}
+										xs={6}
+									>
+										<FormLabelText label="地址" />
+									</Grid>
+
+									<Grid xs={12}>
 										<TextField
-											autoFocus={true}
 											color="primary"
+											fullWidth={true}
 											id="standard-basic"
-											label="姓名"
+											label="留言内容"
+											sx={{
+												mt: '37px',
+												width: '660px',
+												pt: '15px',
+											}}
 											variant="standard"
 										/>
 									</Grid>
+
+									{/* 提交按钮组合 */}
+									<Grid xs={12}>
+										<Box
+											sx={{
+												width: '660px',
+												display: 'flex',
+												justifyContent: 'space-between',
+											}}
+										>
+											<Button
+												sx={{
+													mt: '50px',
+													width: '284px',
+													height: '36px',
+													lineHeight: '36px',
+													color: '#fff',
+													fontFamily: 'Microsoft YaHei-Regular',
+													border: '1px solid #E1E1E1',
+													backgroundImage:
+														'linear-gradient(to right,#1A1D35, #353C71)',
+												}}
+											>
+												提交留言
+											</Button>
+
+											<Input
+												sx={{
+													display: 'inline-block',
+													ml: '32px',
+													mt: '50px',
+													width: '284px',
+													height: '36px',
+													lineHeight: '36px',
+													color: '#fff',
+													fontFamily: 'Microsoft YaHei-Regular',
+													border: '1px solid #E1E1E1',
+													p: 0,
+													backgroundImage:
+														'linear-gradient(to right,#1A1D35, #353C71)',
+												}}
+												type="reset"
+												value="重置留言"
+											/>
+										</Box>
+									</Grid>
 								</Grid>
-							</ThemeProvider>
-						</Box>
+							</Box>
+						</ThemeProvider>
 					</Box>
 				</Box>
 			</ThemeProvider>
