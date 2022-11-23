@@ -1,6 +1,10 @@
-import './index.scss'
-
-import { Box, createTheme, ScopedCssBaseline, Theme, ThemeProvider } from '@mui/material'
+import {
+	Box,
+	createTheme,
+	ScopedCssBaseline,
+	Theme,
+	ThemeProvider,
+} from '@mui/material'
 import { ReactNode } from 'react'
 
 // 背景颜色

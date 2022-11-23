@@ -1,10 +1,18 @@
 import './index.scss'
 
-import { Box, Button, List, ListItem, Typography } from '@mui/material'
+import {
+	Box,
+	Button,
+	List,
+	ListItem,
+	ThemeProvider,
+	Typography,
+} from '@mui/material'
 
 import email from '@/assets/images/email.png' // email
 import logo from '@/assets/images/logo.webp' // logo
 import { INavItems } from '@/types'
+import { typographySubtitle1Theme as theme } from '@/utils/font' // 字体样式
 
 // nav items 路由
 const navItems: INavItems[] = [
@@ -41,32 +49,38 @@ export default function Header() {
 		>
 			{/* logo */}
 			<Box className="nav-logo">
-				<img alt="Logo" src={logo} />
+				<img
+					alt="Logo"
+					src={logo}
+				/>
 			</Box>
 
-			{/* nav */}
-			<List
-				className="nav-items"
-				sx={{
-					display: 'flex',
-					ml: '360px',
-					justifyContent: 'space-between',
-				}}
-			>
-				{navItems.map((item) => (
-					<ListItem
-						key={item.id}
-						sx={{
-							width: 'auto',
-							fontWeight: 'bold',
-							color: '#fff',
-						}}
-					>
-						<Typography variant="subtitle1">{item.label}</Typography>
-					</ListItem>
-				))}
-			</List>
-
+			<ThemeProvider theme={theme}>
+				{/* nav */}
+				<List
+					className="nav-items"
+					sx={{
+						ml: '300px',
+						columnCount: '4',
+						whiteSpace: 'nowrap',
+					}}
+				>
+					{navItems.map((item) => (
+						<ListItem
+							key={item.id}
+							sx={{
+								maxWidth: '64px',
+								mx: 0,
+								px: 0,
+								fontWeight: 'bold',
+								color: '#fff',
+							}}
+						>
+							<Typography variant="subtitle1">{item.label}</Typography>
+						</ListItem>
+					))}
+				</List>
+			</ThemeProvider>
 			{/* 分割线 */}
 			<Box
 				className="nav-separate"
@@ -79,7 +93,10 @@ export default function Header() {
 			/>
 
 			{/* 邮件组 */}
-			<Box className="nav-email" sx={{ display: 'flex' }}>
+			<Box
+				className="nav-email"
+				sx={{ display: 'flex' }}
+			>
 				<Box
 					alt="email"
 					component="img"
@@ -89,7 +106,10 @@ export default function Header() {
 						height: '24px',
 					}}
 				/>
-				<Typography sx={{ ml: '15px', color: '#fff' }} variant="subtitle1">
+				<Typography
+					sx={{ ml: '15px', color: '#fff' }}
+					variant="subtitle1"
+				>
 					xinghuan@xinghuankj.com
 				</Typography>
 			</Box>

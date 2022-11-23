@@ -1,24 +1,108 @@
 import './index.scss'
 
-import { Box, Button, createTheme, Theme, ThemeProvider, Typography } from '@mui/material'
+import {
+	Box,
+	Button,
+	Divider,
+	Grid,
+	List,
+	ListItem,
+	TextField,
+	ThemeProvider,
+	Typography,
+} from '@mui/material'
 
+import cooperativePartner1 from '@/assets/images/cooperativePartner1.webp'
 import frame from '@/assets/images/Frame.png'
+import globalServer from '@/assets/images/globalServer.webp'
 import pc from '@/assets/images/Group 29.webp'
+import imageItem1 from '@/assets/images/imageItem1.webp'
+import item1 from '@/assets/images/item1.webp'
 import pcBackground from '@/assets/images/pcBackage.webp'
+import storeImg from '@/assets/images/store.webp'
+import { IcaseList, ICooperativePartner, IintroduceList } from '@/types'
+import {
+	textFieldPrimaryTheme as input,
+	typographySubtitle1Theme as theme,
+	typographyTitleTheme as title,
+} from '@/utils/font'
 
-// subtitle1样式
-const theme: Theme = createTheme({
-	typography: {
-		fontFamily: ['Microsoft YaHei - Bold', 'Microsoft YaHei', 'sans-serif'].join(','),
-		subtitle1: {
-			fontSize: 16,
-			fontWeight: 'bold',
-			lineHeight: '19px',
-			color: '#fff',
-			'-webkit-background-clip': 'Typography',
-		},
+// 介绍-列表
+const introduceList: IintroduceList[] = [
+	{
+		id: 0,
+		icon: storeImg,
+		title: '无限制使用',
+		label: '永久免费使用飞鼠，无须注册，下载即可使用，而且永久免费',
 	},
-})
+	{
+		id: 1,
+		icon: storeImg,
+		title: '无限制使用',
+		label: '永久免费使用飞鼠，无须注册，下载即可使用，而且永久免费',
+	},
+	{
+		id: 2,
+		icon: storeImg,
+		title: '无限制使用',
+		label: '永久免费使用飞鼠，无须注册，下载即可使用，而且永久免费',
+	},
+	{
+		id: 3,
+		icon: storeImg,
+		title: '无限制使用',
+		label: '永久免费使用飞鼠，无须注册，下载即可使用，而且永久免费',
+	},
+]
+
+// 合作伙伴列表
+const cooperativePartner: ICooperativePartner[] = [
+	{ id: 0, img: cooperativePartner1, alt: '伙伴介绍' },
+	{ id: 1, img: cooperativePartner1, alt: '伙伴介绍' },
+	{ id: 2, img: cooperativePartner1, alt: '伙伴介绍' },
+	{ id: 3, img: cooperativePartner1, alt: '伙伴介绍' },
+]
+
+// 案例列表
+const caseList: IcaseList[] = [
+	{
+		id: 0,
+		label:
+			'依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。 安能的发展得到社会各届的广泛认可，先后获得国内外顶尖资本的数十亿人民币注资。2018年，安能被交通运输部授予“中国运输领袖品牌”荣誉称号，2020年安能物流获21世纪最佳商业模式奖。',
+		title: '标题一',
+		alt: '图片描述',
+		uri: item1,
+		imageList: [
+			{
+				uri: imageItem1,
+				id: 'img1',
+				alt: 'img2',
+			},
+			{
+				uri: imageItem1,
+				id: 'img2',
+				alt: 'img2',
+			},
+			{
+				uri: imageItem1,
+				id: 'img3',
+				alt: 'img2',
+			},
+		],
+	},
+	//	{
+	//		id: 1,
+	//		label:
+	//			'依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。
+	// 安能的发展得到社会各届的广泛认可，先后获得国内外顶尖资本的数十亿人民币注资。2018年，安能被交通运输部授予“中国运输领袖品牌”荣誉称号，2020年安能物流获21世纪最佳商业模式奖。', title: '标题二', alt: '图片描述',
+	// uri: item1, }, { id: 2, label:
+	// '依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。
+	// 安能的发展得到社会各届的广泛认可，先后获得国内外顶尖资本的数十亿人民币注资。2018年，安能被交通运输部授予“中国运输领袖品牌”荣誉称号，2020年安能物流获21世纪最佳商业模式奖。', title: '标题三', alt: '图片描述',
+	// uri: item1, }, { id: 3, label:
+	// '依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。
+	// 安能的发展得到社会各届的广泛认可，先后获得国内外顶尖资本的数十亿人民币注资。2018年，安能被交通运输部授予“中国运输领袖品牌”荣誉称号，2020年安能物流获21世纪最佳商业模式奖。', title: '标题四', alt: '图片描述',
+	// uri: item1, },
+]
 
 export default function Main() {
 	return (
@@ -30,7 +114,10 @@ export default function Main() {
 		>
 			<ThemeProvider theme={theme}>
 				{/* 标题内容 */}
-				<Box component="cite" sx={{ width: '618px', display: 'block' }}>
+				<Box
+					component="cite"
+					sx={{ width: '618px', display: 'block' }}
+				>
 					<Typography
 						sx={{
 							width: '100%',
@@ -104,16 +191,22 @@ export default function Main() {
 
 					{/* 观看小视频按钮 */}
 					<Box sx={{ ml: '50px' }}>
-						<img alt="frame" src={frame} />
+						<img
+							alt="frame"
+							src={frame}
+						/>
 						{/* <img alt="frame" component="img" src={frame} /> */}
 					</Box>
 
 					{/* 观看小视频文字 */}
 					<Box sx={{ ml: '15px' }}>
-						<Typography sx={{ fontSize: 20, width: '100px' }}>观看小视频</Typography>
+						<Typography sx={{ fontSize: 20, width: '100px' }}>
+							观看小视频
+						</Typography>
 					</Box>
 				</Box>
 
+				{/* pc图层组 */}
 				<Box
 					className="main-pc"
 					sx={{
@@ -121,6 +214,7 @@ export default function Main() {
 						height: '532px',
 					}}
 				>
+					{/* pc图 */}
 					<Box
 						alt="pc"
 						className="main-pc-img"
@@ -132,6 +226,7 @@ export default function Main() {
 						}}
 					/>
 
+					{/* 圆圈背景 */}
 					<Box
 						alt="pcBackground"
 						className="main-pc-bc"
@@ -144,9 +239,432 @@ export default function Main() {
 					/>
 				</Box>
 
-				{/* 	关于飞鼠VPN */}
-				<Box>
-					<Typography>关于飞鼠VPN</Typography>
+				{/* 	关于VPN-标题 */}
+				<Box
+					className="main-about"
+					component="section"
+				>
+					<Box>
+						<ThemeProvider theme={title}>
+							<Typography variant="subtitle2">关于VPN</Typography>
+						</ThemeProvider>
+						{/* 关于VPN-文本 */}
+						<Typography
+							sx={{
+								fontSize: 36,
+								color: '#fff',
+								mt: '24px',
+								mx: 'auto',
+							}}
+							variant="subtitle1"
+						>
+							为什么要使用飞鼠VPN？
+						</Typography>
+					</Box>
+
+					{/* 关于VPN-介绍-列表 */}
+					<List
+						sx={{
+							mt: '60px',
+							display: 'flex',
+							justifyContent: 'space-between',
+							p: 0,
+						}}
+					>
+						{/* 关于VPN-介绍-列表-子项 */}
+						{introduceList.map((item) => (
+							<ListItem key={item.id}>
+								<Box
+									component="article"
+									sx={{
+										position: 'relative',
+										width: '288px',
+										height: '288px',
+										borderRadius: '16px',
+										backgroundImage:
+											'linear-gradient(135deg,#2A2F52 0%,#1D2039 100%)',
+										borderImage:
+											'linear-gradient(135deg, rgba(25, 27, 49, 1), rgba(57, 64, 114, 1)) 1 1',
+									}}
+								>
+									{/* 关于VPN-存储图层 */}
+									<Box
+										sx={{
+											position: 'relative',
+											left: '40px',
+											top: '40px',
+											backgroundImage: 'linear-gradient(#282C4D,#333965)',
+											borderRadius: '50%',
+											width: '58px',
+											height: '58px',
+										}}
+									>
+										<Box
+											alt="store"
+											component="img"
+											src={item.icon}
+											sx={{
+												position: 'absolute',
+												top: '50%',
+												left: ' 50%',
+												transform: 'translate(-50%, -50%)',
+											}}
+										/>
+									</Box>
+
+									{/* 关于VPN-子项-标题 */}
+									<Box component="figure">
+										<Typography
+											sx={{
+												position: 'absolute',
+												left: '40px',
+												top: '114px',
+												fontSize: '24px',
+												lineHeight: '28px',
+												color: '#fff',
+											}}
+											variant="subtitle1"
+										>
+											{item.title}
+										</Typography>
+										<Box
+											component="figcaption"
+											sx={{
+												maxWidth: '224px',
+												position: 'absolute',
+												left: '40px',
+												top: '158px',
+											}}
+										>
+											{/* 关于VPN-子项-文本 */}
+											<Typography
+												sx={{
+													textAlign: 'left',
+													fontFamily: 'Microsoft YaHei-Regular',
+													color: '#fff',
+												}}
+											>
+												{item.label}
+											</Typography>
+										</Box>
+									</Box>
+								</Box>
+							</ListItem>
+						))}
+					</List>
+				</Box>
+
+				{/* 合作伙伴 */}
+				<Box
+					className="main-cooperativePartner"
+					component="section"
+				>
+					{/* 合作伙伴-文本 */}
+					<Typography sx={{ fontSize: 24, color: '#fff', py: '12px' }}>
+						我们有与这些伙伴有合作
+					</Typography>
+					{/* 合作伙伴-列表 */}
+					<List
+						sx={{
+							display: 'inline-flex',
+							justifyContent: 'space-between',
+							width: '800px',
+						}}
+					>
+						{/* 合作伙伴-列表-子项 */}
+						{cooperativePartner.map((item) => (
+							<ListItem
+								key={item.id}
+								sx={{ width: '152px', height: '56px' }}
+							>
+								{/* 合作伙伴-列表-图片 */}
+								<Box
+									alt={item.alt}
+									component="img"
+									src={item.img}
+									sx={{
+										width: '100%',
+										height: '100% ',
+									}}
+								/>
+							</ListItem>
+						))}
+					</List>
+				</Box>
+
+				{/* VPN-图示 */}
+				<Box
+					className="main-graphicalRepresentation"
+					component="article"
+				>
+					{/* VPN-图示-图片 */}
+					<Box
+						alt="globalServer"
+						component="img"
+						src={globalServer}
+					/>
+					{/* VPN-图示-介绍 */}
+					<Box
+						sx={{
+							ml: '33px',
+						}}
+					>
+						<Typography
+							sx={{
+								fontSize: 36,
+								color: '#fff',
+								maxWidth: '560px',
+							}}
+						>
+							提供自己的 DNS 系统的全球最佳 VPN 服务
+						</Typography>
+
+						<Typography
+							sx={{
+								mt: '27px',
+								fontSize: 14,
+								color: '#fff',
+								fontFamily: 'Microsoft YaHei-Regular',
+								lineHeight: '25px',
+							}}
+						>
+							依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。
+						</Typography>
+					</Box>
+				</Box>
+
+				{/* 案例 */}
+				<Box
+					component="section"
+					sx={{
+						mt: '50px',
+						height: 'auto',
+					}}
+				>
+					{/* 案例-标题 */}
+					<Box className="main-case">
+						<ThemeProvider theme={title}>
+							<Typography variant="subtitle2">案例</Typography>
+						</ThemeProvider>
+						{/* 案例-标题-精选 */}
+						<Typography
+							sx={{
+								mt: '24px',
+								color: '#fff',
+								fontSize: '36px',
+							}}
+						>
+							精选案例
+						</Typography>
+					</Box>
+
+					{/* 案例-列表 */}
+					<List
+						sx={{
+							mt: '88px',
+						}}
+					>
+						{/* 案例-列表-子项 */}
+						{caseList.map((item) => (
+							<ListItem
+								key={item.id}
+								sx={{
+									display: 'flex',
+									justifyContent: 'space-between',
+									flexDirection: 'column',
+								}}
+							>
+								{/* 案例-列表-子项-图文组 */}
+								<Box
+									sx={{
+										display: 'flex',
+										justifyContent: 'space-between',
+									}}
+								>
+									{/* 案例-列表-子项-描述图片 */}
+									<Box
+										sx={{
+											ml: '50px',
+											width: '200px',
+											height: '200px',
+										}}
+									>
+										<Box
+											alt={item.alt}
+											component="img"
+											src={item.uri}
+											sx={{
+												width: '100%',
+												height: '100%',
+												borderRadius: '16px',
+											}}
+										/>
+									</Box>
+									{/* 案例-列表-子项-文字组 */}
+									<Box
+										sx={{
+											ml: '70px',
+											height: '200px',
+											display: 'flex',
+											justifyContent: 'space-between',
+											flexDirection: 'column',
+											color: '#fff',
+										}}
+									>
+										{/* 案例-列表-子项-标题 */}
+										<Box>
+											<Typography sx={{ fontSize: 26 }}>
+												{item.title}
+											</Typography>
+										</Box>
+										{/* 案例-列表-子项-文字介绍 */}
+										<Box
+											sx={{
+												mt: '15px',
+												maxWidth: '740px',
+												lineHeight: '25px',
+											}}
+										>
+											<Typography>{item.label}</Typography>
+										</Box>
+									</Box>
+								</Box>
+
+								<Box
+									sx={{
+										mt: '65px',
+									}}
+								>
+									{/* 案例-列表-子项-图片列表 */}
+									{item.imageList.map((img) => (
+										<Box
+											key={img.id}
+											alt={img.alt}
+											className="main-case-items-images"
+											component="img"
+											src={img.uri}
+											sx={{
+												borderRadius: '16px',
+											}}
+										/>
+									))}
+								</Box>
+							</ListItem>
+						))}
+					</List>
+				</Box>
+
+				{/* 分隔线 */}
+				<Divider
+					flexItem={true}
+					light={true}
+					sx={{
+						mt: '158px',
+						borderColor: '#ccc',
+						width: '1200px',
+					}}
+				/>
+
+				{/* 联系 */}
+				<Box
+					sx={{
+						mt: '140px',
+						display: 'flex',
+					}}
+				>
+					<Box
+						sx={{
+							color: '#fff',
+						}}
+					>
+						<Typography
+							sx={{
+								fontFamily: 'Microsoft YaHei-Regular',
+								fontSize: 25,
+							}}
+						>
+							联系方式
+						</Typography>
+						<Typography
+							sx={{
+								mt: '5px',
+								fontFamily: 'Microsoft YaHei-Regular',
+								fontSize: 14,
+								lineHeight: '16px',
+								letterSpacing: '3px',
+							}}
+						>
+							company profile
+						</Typography>
+					</Box>
+
+					{/* 留言 */}
+					<Box
+						sx={{
+							ml: '400px',
+							color: '#fff',
+							display: 'flex',
+						}}
+					>
+						<Divider
+							light={true}
+							orientation="vertical"
+							sx={{ borderColor: '#fff', height: '400px' }}
+						/>
+						<Box
+							sx={{
+								ml: '103px',
+							}}
+						>
+							<Box>
+								<Typography
+									sx={{
+										fontFamily: 'Microsoft YaHei-Regular',
+										fontSize: 25,
+									}}
+								>
+									留言
+								</Typography>
+								<Typography
+									sx={{
+										mt: '5px',
+										fontFamily: 'Microsoft YaHei-Regular',
+										fontSize: 14,
+										lineHeight: '16px',
+										letterSpacing: '3px',
+									}}
+								>
+									company
+								</Typography>
+							</Box>
+
+							{/* 留言-表单 */}
+							<ThemeProvider theme={input}>
+								<Grid
+									container
+									spacing={3}
+								>
+									<Grid xs={6}>
+										<TextField
+											autoFocus={true}
+											color="primary"
+											id="standard-basic"
+											label="姓名"
+											variant="standard"
+										/>
+
+										<TextField
+											autoFocus={true}
+											color="primary"
+											id="standard-basic"
+											label="姓名"
+											variant="standard"
+										/>
+									</Grid>
+								</Grid>
+							</ThemeProvider>
+						</Box>
+					</Box>
 				</Box>
 			</ThemeProvider>
 		</Box>

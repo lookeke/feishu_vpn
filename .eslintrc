@@ -85,16 +85,13 @@
 //			"error",
 //			"prefer-double"
 //		],
-		// 三元换行
-		"multiline-ternary": [
-			"error",
-			"always"
-		],
-		// 注释前后的空行
+		// 三元换行 "always" 强制, 与Prettier冲突
+		"multiline-ternary": "off",
+		// 块状注释之前有一个空行
 		"lines-around-comment": [
-			"error",
+			"warn",
 			{
-				"beforeLineComment": true
+				"beforeBlockComment": true
 			}
 		],
 		// 禁止行末尾空格

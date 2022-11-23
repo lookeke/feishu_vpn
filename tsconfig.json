@@ -30,7 +30,7 @@
 		"strictNullChecks": true,
 		"types": [
 			"node",
-			"./src/@types"
+			"./src/types"
 		],
 		"baseUrl": "./",
 		"paths": {

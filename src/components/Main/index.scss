@@ -1,4 +1,4 @@
-@import '../../config/config';
+@import "../../config/config";
 
 main {
 	position  : relative;
@@ -9,11 +9,13 @@ main {
 }
 
 .main {
+	/* pc背景图层组 */
 	&-pc {
 		position : absolute;
 		top      : -150px;
 		right    : 0;
 
+		/* pc背景图 */
 		&-img {
 			position  : absolute;
 			right     : 0;
@@ -21,12 +23,47 @@ main {
 			transform : translateX(11%);
 		}
 
+		/* 圆圈背景 */
 		&-bc {
 			position  : absolute;
 			top       : 45px;
 			right     : -45px;
 			z-index   : 1;
 			transform : translateX(15%);
+		}
+	}
+
+	/* 关于VPN */
+	&-about {
+		width      : $width;
+		margin     : 195px auto 0;
+		text-align : center;
+	}
+
+	/* 合作伙伴 */
+	&-cooperativePartner {
+		display         : inline-flex;
+		justify-content : space-between;
+		width           : $width;
+		margin-top      : 88px;
+	}
+
+	/* 案例 */
+	&-case {
+		width      : $width;
+		text-align : center;
+
+	}
+
+	&-graphicalRepresentation {
+		width        : $width;
+		margin-top   : 150px;
+		column-count : 2;
+	}
+
+	&-case-items-images {
+		&:nth-child(2) {
+			margin : 0 28px;
 		}
 	}
 }
