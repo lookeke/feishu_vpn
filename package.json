@@ -1,7 +1,7 @@
 {
 	"name": "feishu_vpn",
 	"private": true,
-	"version": "0.1.86",
+	"version": "1.0.0",
 	"type": "commonjs",
 	"description": "feishu-vpn single page web application",
 	"author": {

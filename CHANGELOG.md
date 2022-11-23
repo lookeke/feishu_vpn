@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/lookeke/feishu_vpn/compare/v0.1.86...v1.0.0) (2022-11-23)
+
 ### [0.1.86](https://github.com/lookeke/feishu_vpn/compare/v0.1.85...v0.1.86) (2022-11-23)
 
 ### [0.1.85](https://github.com/lookeke/feishu_vpn/compare/v0.1.84...v0.1.85) (2022-11-23)
