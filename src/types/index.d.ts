@@ -42,3 +42,9 @@ export type IcompanyProfile = {
 	text: string
 	btnText: string
 }
+
+// 快速导航 - 列表
+export type InavItems = {
+	id: number | string
+	label: string
+}

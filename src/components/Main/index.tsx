@@ -776,16 +776,23 @@ export default function Main() {
 										width: '750px',
 									}}
 								>
-									<Grid xs={6}>
+									<Grid
+										item
+										xs={6}
+									>
 										<FormLabelText label="姓名" />
 									</Grid>
 
-									<Grid xs={6}>
+									<Grid
+										item
+										xs={6}
+									>
 										<FormLabelText label="电话" />
 									</Grid>
 
 									<Grid
 										sx={{ mt: '37px' }}
+										item
 										xs={6}
 									>
 										<FormLabelText label="地址" />
@@ -793,12 +800,16 @@ export default function Main() {
 
 									<Grid
 										sx={{ mt: '37px' }}
+										item
 										xs={6}
 									>
 										<FormLabelText label="地址" />
 									</Grid>
 
-									<Grid xs={12}>
+									<Grid
+										item
+										xs={12}
+									>
 										<TextField
 											color="primary"
 											fullWidth={true}
@@ -814,7 +825,10 @@ export default function Main() {
 									</Grid>
 
 									{/* 提交按钮组合 */}
-									<Grid xs={12}>
+									<Grid
+										item
+										xs={12}
+									>
 										<Box
 											sx={{
 												width: '660px',
