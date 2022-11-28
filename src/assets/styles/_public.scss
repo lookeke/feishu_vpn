@@ -2,8 +2,8 @@
 
 /* 位置居中类 */
 @mixin position-center {
-	position  : absolute;
-	top       : 50%;
-	left      : 50%;
-	transform : translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

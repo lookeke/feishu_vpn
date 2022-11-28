@@ -1,41 +1,56 @@
 import './index.scss'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 import {
 	Box,
 	Button,
 	Divider,
-	Grid,
-	Input,
 	List,
 	ListItem,
-	Stack,
-	TextField,
 	ThemeProvider,
 	Typography,
 } from '@mui/material'
+import Swiper, { Navigation } from 'swiper'
 
-import cooperativePartner1 from '@/assets/images/cooperativePartner1.webp'
-import email from '@/assets/images/email.webp'
+// 精选案例-案例1项图片
+import case1ItemsImages1 from '@/assets/images/case1-items-images-1.webp'
+import case1ItemsImages2 from '@/assets/images/case1-items-images-2.webp'
+import case1ItemsImages3 from '@/assets/images/case1-items-images-3.webp'
+import case1Title from '@/assets/images/case1-title.webp'
+// 精选案例-案例2项图片
+import case2ItemsImages3 from '@/assets/images/case2-items-images-3.webp'
+import case2Title from '@/assets/images/case2-title.webp'
+import case3Title from '@/assets/images/case3-title.webp'
+import encryption from '@/assets/images/encryption.webp'
+import flow from '@/assets/images/flow.webp'
 import frame from '@/assets/images/Frame.png'
 import globalServer from '@/assets/images/globalServer.webp'
 import pc from '@/assets/images/Group 29.webp'
-import imageItem1 from '@/assets/images/imageItem1.webp'
-import item1 from '@/assets/images/item1.webp'
+import left from '@/assets/images/left.webp'
+import management from '@/assets/images/management.webp'
 import pcBackground from '@/assets/images/pcBackage.webp'
+import right from '@/assets/images/right.webp'
+import cooperativePartner1 from '@/assets/images/sealos-left 1.webp'
+import cooperativePartner2 from '@/assets/images/sealos-left 2.webp'
+import cooperativePartner3 from '@/assets/images/sealos-left 3.webp'
 import storeImg from '@/assets/images/store.webp'
-import tell from '@/assets/images/tell.webp'
-import FormLabelText from '@/components/FormLabelText'
+import { IcaseList, ICooperativePartner, IintroduceList } from '@/types'
 import {
-	IcaseList,
-	IcompanyProfile,
-	ICooperativePartner,
-	IintroduceList,
-} from '@/types'
-import {
-	textFieldPrimaryTheme as input,
 	typographySubtitle1Theme as theme,
 	typographyTitleTheme as title,
 } from '@/utils/font'
+
+//@ts-ignore
+// eslint-disable-next-line no-unused-vars
+const swiper = new Swiper('.swiper', {
+	modules: [Navigation],
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+})
 
 // 介绍-列表
 const introduceList: IintroduceList[] = [
@@ -47,30 +62,29 @@ const introduceList: IintroduceList[] = [
 	},
 	{
 		id: 1,
-		icon: storeImg,
-		title: '无限制使用',
-		label: '永久免费使用飞鼠，无须注册，下载即可使用，而且永久免费',
+		icon: management,
+		title: '快捷管理',
+		label: '方便快捷web创建用户，可视化查看用户在线状态',
 	},
 	{
 		id: 2,
-		icon: storeImg,
-		title: '无限制使用',
-		label: '永久免费使用飞鼠，无须注册，下载即可使用，而且永久免费',
+		icon: encryption,
+		title: '加密传输',
+		label: '通过对传递数据的多重加密，没有任何人可以获取你们公司内部信息。',
 	},
 	{
 		id: 3,
-		icon: storeImg,
-		title: '无限制使用',
-		label: '永久免费使用飞鼠，无须注册，下载即可使用，而且永久免费',
+		icon: flow,
+		title: '高速流量',
+		label: '速度飞鼠安全接入网关，最快可以千兆，网络延迟最低0.4',
 	},
 ]
 
 // 合作伙伴列表
 const cooperativePartner: ICooperativePartner[] = [
 	{ id: 0, img: cooperativePartner1, alt: '伙伴介绍' },
-	{ id: 1, img: cooperativePartner1, alt: '伙伴介绍' },
-	{ id: 2, img: cooperativePartner1, alt: '伙伴介绍' },
-	{ id: 3, img: cooperativePartner1, alt: '伙伴介绍' },
+	{ id: 1, img: cooperativePartner2, alt: '伙伴介绍' },
+	{ id: 2, img: cooperativePartner3, alt: '伙伴介绍' },
 ]
 
 // 案例列表
@@ -78,57 +92,86 @@ const caseList: IcaseList[] = [
 	{
 		id: 0,
 		label:
-			'依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。 安能的发展得到社会各届的广泛认可，先后获得国内外顶尖资本的数十亿人民币注资。2018年，安能被交通运输部授予“中国运输领袖品牌”荣誉称号，2020年安能物流获21世纪最佳商业模式奖。',
-		title: '标题一',
+			'员工可在外网环境流畅访问企业内网资料，灵活异地上传下载资料，随时随地远程连接自己的异地主机桌面，畅想本地化绿色办公',
+		title: '企业管理远程办公',
 		alt: '图片描述',
-		uri: item1,
+		uri: case1Title,
 		imageList: [
 			{
-				uri: imageItem1,
+				uri: case1ItemsImages1,
 				id: 'img1',
 				alt: 'img2',
+				label: '数据安全传输、跨网络稳定连接',
 			},
 			{
-				uri: imageItem1,
+				uri: case1ItemsImages2,
 				id: 'img2',
 				alt: 'img2',
+				label: '关键设备状态告警',
 			},
 			{
-				uri: imageItem1,
+				uri: case1ItemsImages3,
 				id: 'img3',
 				alt: 'img2',
+				label: '规范化科学化的企业远程办公体系',
 			},
 		],
 	},
-	//	{
-	//		id: 1,
-	//		label:
-	//			'依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。
-	// 安能的发展得到社会各届的广泛认可，先后获得国内外顶尖资本的数十亿人民币注资。2018年，安能被交通运输部授予“中国运输领袖品牌”荣誉称号，2020年安能物流获21世纪最佳商业模式奖。', title: '标题二', alt: '图片描述',
-	// uri: item1, }, { id: 2, label:
-	// '依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。
-	// 安能的发展得到社会各届的广泛认可，先后获得国内外顶尖资本的数十亿人民币注资。2018年，安能被交通运输部授予“中国运输领袖品牌”荣誉称号，2020年安能物流获21世纪最佳商业模式奖。', title: '标题三', alt: '图片描述',
-	// uri: item1, }, { id: 3, label:
-	// '依靠创新型商业模式推动，我们持续从客户需求出发，创新推出“MiNi电商系列”、“精准零担快运”、“定时达”、“安心达”、“普惠达”等行业优势产品。安能以大数据、云计算等科技手段为基础，自主研发48套IT系统推动科技创新和运营结合，精细化管理实现了运营的全链路数字化。
-	// 安能的发展得到社会各届的广泛认可，先后获得国内外顶尖资本的数十亿人民币注资。2018年，安能被交通运输部授予“中国运输领袖品牌”荣誉称号，2020年安能物流获21世纪最佳商业模式奖。', title: '标题四', alt: '图片描述',
-	// uri: item1, },
-]
-
-// 联系方式列表
-const companyProfile: IcompanyProfile[] = [
-	{
-		id: 0,
-		label: '电话',
-		icon: tell,
-		text: '0371-66464887',
-		btnText: '拨打电话',
-	},
 	{
 		id: 1,
-		label: '邮箱',
-		icon: email,
-		text: '15879649451@126.com',
-		btnText: '发送邮件',
+		label:
+			'随时随地访问家庭网络环境，享受优质数据传输服务，重要资料即时上传远端内网，防止数据意外丢失 ',
+		title: '家庭娱乐，资料备份',
+		alt: '图片描述',
+		uri: case2Title,
+		imageList: [
+			{
+				uri: case1ItemsImages1,
+				id: 'img1',
+				alt: 'img2',
+				label: '数据安全传输、跨网络稳定连接',
+			},
+			{
+				uri: case1ItemsImages2,
+				id: 'img2',
+				alt: 'img2',
+				label: '关键设备状态告警',
+			},
+			{
+				uri: case2ItemsImages3,
+				id: 'img3',
+				alt: 'img2',
+				label: '规范化科学化的企业远程办公体系',
+			},
+		],
+	},
+	{
+		id: 2,
+		label:
+			'业务上云之后，需要实现与本地私有云、本地数据中心进行组网，实现数据互通互联。',
+		title: '数据安全传输、跨网络稳定连接',
+		alt: '图片描述',
+		uri: case3Title,
+		imageList: [
+			{
+				uri: case1ItemsImages1,
+				id: 'img1',
+				alt: 'img2',
+				label: '数据安全传输、跨网络稳定连接',
+			},
+			{
+				uri: case1ItemsImages2,
+				id: 'img2',
+				alt: 'img2',
+				label: '关键设备状态告警',
+			},
+			{
+				uri: case1ItemsImages3,
+				id: 'img3',
+				alt: 'img2',
+				label: '规范化科学化的企业远程办公体系',
+			},
+		],
 	},
 ]
 
@@ -206,6 +249,9 @@ export default function Main() {
 							background: 'linear-gradient(to right,#1A1D35, #353C71)',
 							TypographyAlign: 'center',
 							fontWeight: 'bold',
+							'&:hover': {
+								mb: '5px',
+							},
 						}}
 					>
 						<Button
@@ -228,13 +274,16 @@ export default function Main() {
 							mt: '12px',
 							height: '64px',
 							lineHeight: '64px',
+							'&:hover': {
+								mb: '5px',
+							},
 						}}
 					>
 						<Box
-							sx={{ ml: '50px' }}
-							component="img"
 							alt="frame"
+							component="img"
 							src={frame}
+							sx={{ ml: '50px' }}
 						/>
 					</Box>
 
@@ -418,7 +467,7 @@ export default function Main() {
 						sx={{
 							display: 'inline-flex',
 							justifyContent: 'space-between',
-							width: '800px',
+							width: '520px',
 						}}
 					>
 						{/* 合作伙伴-列表-子项 */}
@@ -509,99 +558,119 @@ export default function Main() {
 					</Box>
 
 					{/* 案例-列表 */}
-					<List
-						sx={{
-							mt: '88px',
-						}}
-					>
-						{/* 案例-列表-子项 */}
-						{caseList.map((item) => (
-							<ListItem
-								key={item.id}
-								sx={{
-									display: 'flex',
-									justifyContent: 'space-between',
-									flexDirection: 'column',
-								}}
-							>
-								{/* 案例-列表-子项-图文组 */}
-								<Box
+					<Box className="swiper">
+						<Box
+							alt="left"
+							className="swiper-button-prev"
+							component="img"
+							src={left}
+						/>
+						<Box
+							alt="right"
+							className="swiper-button-next"
+							component="img"
+							src={right}
+						/>
+
+						<List
+							className="swiper-wrapper"
+							sx={{
+								mt: '88px',
+							}}
+						>
+							{/* 案例-列表-子项 */}
+							{caseList.map((item) => (
+								<ListItem
+									key={item.id}
+									className="swiper-slide"
 									sx={{
 										display: 'flex',
 										justifyContent: 'space-between',
+										flexDirection: 'column',
 									}}
 								>
-									{/* 案例-列表-子项-描述图片 */}
+									{/* 案例-列表-子项-图文组 */}
 									<Box
 										sx={{
-											ml: '50px',
-											width: '200px',
-											height: '200px',
-										}}
-									>
-										<Box
-											alt={item.alt}
-											component="img"
-											src={item.uri}
-											sx={{
-												width: '100%',
-												height: '100%',
-												borderRadius: '16px',
-											}}
-										/>
-									</Box>
-									{/* 案例-列表-子项-文字组 */}
-									<Box
-										sx={{
-											ml: '70px',
-											height: '200px',
 											display: 'flex',
 											justifyContent: 'space-between',
-											flexDirection: 'column',
-											color: '#fff',
 										}}
 									>
-										{/* 案例-列表-子项-标题 */}
-										<Box>
-											<Typography sx={{ fontSize: 26 }}>
-												{item.title}
-											</Typography>
-										</Box>
-										{/* 案例-列表-子项-文字介绍 */}
+										{/* 案例-列表-子项-描述图片 */}
 										<Box
 											sx={{
-												mt: '15px',
-												maxWidth: '740px',
-												lineHeight: '25px',
+												ml: '50px',
+												width: '200px',
+												height: '200px',
 											}}
 										>
-											<Typography>{item.label}</Typography>
+											<Box
+												alt={item.alt}
+												component="img"
+												src={item.uri}
+												sx={{
+													width: '100%',
+													height: '100%',
+													borderRadius: '16px',
+												}}
+											/>
+										</Box>
+										{/* 案例-列表-子项-文字组 */}
+										<Box
+											sx={{
+												ml: '70px',
+												height: '200px',
+												display: 'flex',
+												justifyContent: 'flex-start',
+												flexDirection: 'column',
+												color: '#fff',
+											}}
+										>
+											{/* 案例-列表-子项-标题 */}
+											<Box>
+												<Typography sx={{ mt: '43px', fontSize: 26 }}>
+													{item.title}
+												</Typography>
+											</Box>
+											{/* 案例-列表-子项-文字介绍 */}
+											<Box
+												sx={{
+													mt: '15px',
+													maxWidth: '600px',
+													lineHeight: '25px',
+												}}
+											>
+												<Typography>{item.label}</Typography>
+											</Box>
 										</Box>
 									</Box>
-								</Box>
 
-								<Box
-									sx={{
-										mt: '65px',
-									}}
-								>
 									{/* 案例-列表-子项-图片列表 */}
-									{item.imageList.map((img) => (
-										<Box
-											key={img.id}
-											alt={img.alt}
-											className="main-case-items-images"
-											component="img"
-											src={img.uri}
-											sx={{
-												borderRadius: '16px',
-											}}
-										/>
-									))}
-								</Box>
-							</ListItem>
-						))}
-					</List>
+									<Box
+										sx={{
+											mt: '65px',
+											columnCount: 3,
+										}}
+									>
+										{item.imageList.map((img) => (
+											<Box
+												key={img.id}
+												className="main-case-items-box"
+											>
+												<Box
+													alt={img.alt}
+													className="main-case-items-images"
+													component="img"
+													src={img.uri}
+												/>
+												<Typography>{img.label}</Typography>
+											</Box>
+										))}
+									</Box>
+								</ListItem>
+							))}
+						</List>
+					</Box>
 				</Box>
 
 				{/* 分隔线 */}
@@ -616,267 +685,6 @@ export default function Main() {
 				/>
 
 				{/* 联系 */}
-				<Box
-					sx={{
-						mt: '140px',
-						display: 'flex',
-					}}
-				>
-					<Box
-						sx={{
-							color: '#fff',
-						}}
-					>
-						<Typography
-							sx={{
-								fontFamily: 'Microsoft YaHei-Regular',
-								fontSize: 25,
-							}}
-						>
-							联系方式
-						</Typography>
-						<Typography
-							sx={{
-								mt: '5px',
-								fontFamily: 'Microsoft YaHei-Regular',
-								fontSize: 14,
-								lineHeight: '16px',
-								letterSpacing: '3px',
-							}}
-						>
-							company profile
-						</Typography>
-
-						<Stack>
-							{/* 联系方式-电话组- */}
-							{companyProfile.map((item) => (
-								<ListItem
-									key={item.id}
-									sx={{
-										mt: '50px',
-										display: 'flex',
-										justifyContent: 'space-between',
-										flexDirection: 'column',
-										alignItems: 'flex-start',
-									}}
-								>
-									{/* 联系方式-图标 */}
-									<Box sx={{ width: '150px' }}>
-										<Box
-											alt="tell"
-											component="img"
-											src={item.icon}
-											sx={{
-												ml: '-20px',
-												width: '13px',
-												height: '13px',
-											}}
-										/>
-										{/* 联系方式-文本 */}
-										<Typography
-											sx={{
-												display: ' inline-block',
-												ml: '6px',
-											}}
-										>
-											{item.label}
-										</Typography>
-									</Box>
-
-									{/* 联系方式-文本 */}
-									<Typography
-										sx={{
-											width: '150px',
-										}}
-									>
-										{item.text}
-									</Typography>
-
-									{/* 联系方式-按钮 */}
-									<Box
-										sx={{
-											mt: '14px',
-										}}
-									>
-										<button
-											style={{
-												width: '100px',
-												height: '32px',
-												border: '1px solid #5560B6',
-												backgroundImage:
-													'linear-gradient(135deg, #1A1D35 0%, #353C71 100%)',
-											}}
-										>
-											<Typography
-												sx={{
-													width: '100px',
-													height: '32px',
-													fontFamily:
-														'Microsoft YaHei-Regular, Microsoft YaHei',
-													fontSize: 14,
-													color: '#fff',
-													lineHeight: '32px',
-												}}
-											>
-												{item.btnText}
-											</Typography>
-										</button>
-									</Box>
-								</ListItem>
-							))}
-						</Stack>
-					</Box>
-
-					{/* 分割线 */}
-					<Divider
-						light={true}
-						orientation="vertical"
-						sx={{ borderColor: '#fff', height: '400px', ml: '344px' }}
-					/>
-
-					{/* 留言 */}
-					<Box
-						sx={{
-							ml: '100px',
-						}}
-					>
-						<Box
-							sx={{
-								color: '#fff',
-							}}
-						>
-							<Typography
-								sx={{
-									fontFamily: 'Microsoft YaHei-Regular',
-									fontSize: 25,
-								}}
-							>
-								留言
-							</Typography>
-							<Typography
-								sx={{
-									mt: '5px',
-									fontFamily: 'Microsoft YaHei-Regular',
-									fontSize: 14,
-									lineHeight: '16px',
-									letterSpacing: '3px',
-								}}
-							>
-								company
-							</Typography>
-						</Box>
-
-						{/* 留言-表单 */}
-						<ThemeProvider theme={input}>
-							<Box component="form">
-								<Grid
-									container
-									sx={{
-										mt: '65px',
-										width: '750px',
-									}}
-								>
-									<Grid
-										item
-										xs={6}
-									>
-										<FormLabelText label="姓名" />
-									</Grid>
-
-									<Grid
-										item
-										xs={6}
-									>
-										<FormLabelText label="电话" />
-									</Grid>
-
-									<Grid
-										sx={{ mt: '37px' }}
-										item
-										xs={6}
-									>
-										<FormLabelText label="地址" />
-									</Grid>
-
-									<Grid
-										sx={{ mt: '37px' }}
-										item
-										xs={6}
-									>
-										<FormLabelText label="地址" />
-									</Grid>
-
-									<Grid
-										item
-										xs={12}
-									>
-										<TextField
-											color="primary"
-											fullWidth={true}
-											id="standard-basic"
-											label="留言内容"
-											sx={{
-												mt: '37px',
-												width: '660px',
-												pt: '15px',
-											}}
-											variant="standard"
-										/>
-									</Grid>
-
-									{/* 提交按钮组合 */}
-									<Grid
-										item
-										xs={12}
-									>
-										<Box
-											sx={{
-												width: '660px',
-												display: 'flex',
-												justifyContent: 'space-between',
-											}}
-										>
-											<Button
-												sx={{
-													mt: '50px',
-													width: '284px',
-													height: '36px',
-													lineHeight: '36px',
-													color: '#fff',
-													fontFamily: 'Microsoft YaHei-Regular',
-													border: '1px solid #E1E1E1',
-													backgroundImage:
-														'linear-gradient(to right,#1A1D35, #353C71)',
-												}}
-											>
-												提交留言
-											</Button>
-
-											<Input
-												sx={{
-													display: 'inline-block',
-													ml: '32px',
-													mt: '50px',
-													width: '284px',
-													height: '36px',
-													lineHeight: '36px',
-													color: '#fff',
-													fontFamily: 'Microsoft YaHei-Regular',
-													border: '1px solid #E1E1E1',
-													p: 0,
-													backgroundImage:
-														'linear-gradient(to right,#1A1D35, #353C71)',
-												}}
-												type="reset"
-												value="重置留言"
-											/>
-										</Box>
-									</Grid>
-								</Grid>
-							</Box>
-						</ThemeProvider>
-					</Box>
-				</Box>
 			</ThemeProvider>
 		</Box>
 	)

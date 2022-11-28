@@ -31,6 +31,7 @@ export type IcaseList = {
 		uri: string
 		id: string
 		alt: string
+		label: string
 	}[]
 }
 

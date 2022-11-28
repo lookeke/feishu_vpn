@@ -52,18 +52,69 @@ main {
 	&-case {
 		width      : $width;
 		text-align : center;
-
 	}
 
 	&-graphicalRepresentation {
-		width        : $width;
-		margin-top   : 150px;
-		column-count : 2;
+		width      : $width;
+		margin-top : 150px;
+
 	}
 
-	&-case-items-images {
-		&:nth-child(2) {
-			margin : 0 28px;
+	&-case-items-box {
+		position : relative;
+		width    : 355px;
+		height   : 256px;
+		background : linear-gradient(#191B31, #394072);
+		border-radius : 16px;
+
+		p {
+			position   : absolute;
+			top        : 50%;
+			left       : 50%;
+			z-index    : 3;
+			display: none;
+			color      : #FFF;
+			white-space: nowrap;
+			transform  : translate(-50%, -50%);
 		}
+
+		&:hover img{
+			opacity : .2;
+		}
+
+		&:hover p {
+			display: block;
+		}
+
+		&-images {
+			position      : absolute;
+			top           : 0;
+			left          : 0;
+			width : 100%;
+			height : 100%;
+			border-radius : 16px;
+
+			&:nth-child(2) {
+				margin : 0 28px;
+			}
+		}
+	}
+
+}
+
+.swiper {
+	&-button-next, &-button-prev {
+		position : absolute;
+		top: 0;
+		width    : 45px !important;
+		height   : 40px !important;
+	}
+
+	&-button-next {
+		right : 0;
+	}
+
+	&-button-prev {
+		left : 0;
 	}
 }

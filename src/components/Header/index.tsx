@@ -125,6 +125,9 @@ export default function Header() {
 					background: 'linear-gradient(to right,#1A1D35, #353C71)',
 					textAlign: 'center',
 					fontWeight: 'bold',
+					'&:hover': {
+						mb: '5px',
+					},
 				}}
 			>
 				<Button

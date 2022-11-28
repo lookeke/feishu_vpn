@@ -1,9 +1,15 @@
 @charset "UTF-8";
 @import '../../config/config';
 
+footer {
+	width: 100vw;
+	color: #FFF;
+	background-color: #111325;
+}
 
-footer{
+.footer-content {
+	display: flex;
+	justify-content: space-between;
 	width: $width;
-	margin:0 auto;
-	color:#FFF;
+	margin: 0 auto;
 }

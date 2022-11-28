@@ -1,6 +1,7 @@
 import './index.scss'
 
 import { Box, Divider, Grid, Stack, Typography } from '@mui/material'
+
 import { InavItems } from '@/types'
 
 // 快速导航-列表
@@ -13,21 +14,15 @@ const navItems: InavItems[] = [
 ]
 export default function Footer() {
 	return (
-		<>
-			<Box
-				component="footer"
-				sx={{
-					mt: '86px',
-				}}
-			>
-				<Box
-					sx={{
-						display: 'flex',
-						justifyContent: 'space-between',
-					}}
-				>
+		<Box component="footer">
+			<Box>
+				<Box className="footer-content">
 					{/* 快速导航 */}
-					<Box>
+					<Box
+						sx={{
+							mt: '86px',
+						}}
+					>
 						<Typography
 							sx={{
 								fontFamily: 'Microsoft YaHei-Regular',
@@ -73,7 +68,11 @@ export default function Footer() {
 					</Box>
 
 					{/* 关于 */}
-					<Box>
+					<Box
+						sx={{
+							mt: '86px',
+						}}
+					>
 						<Typography
 							sx={{
 								fontFamily: 'Microsoft YaHei-Regular',
@@ -95,10 +94,12 @@ export default function Footer() {
 
 						<Stack sx={{ mt: '50px', fontSize: 12 }}>
 							<p>
-								地址：中国上海市青浦区 徐泾镇华徐公路999号 E通世界北区B栋8楼
+								官网地址：中国上海市青浦区 徐泾镇华徐公路999号 E通世界北区B栋8楼
 							</p>
-							<p>全国统一客服电话：400-633-7777</p>
-							<p>邮箱：3123545468478</p>
+							<p>代码仓库：中国上海市青浦区 徐泾镇华徐公路999号</p>
+							<p>
+								镜像仓库：中国上海市青浦区 徐泾镇华徐公路999号 E通世界北区B栋8楼
+							</p>
 
 							<p style={{ marginTop: '40px' }}>邮编：10010</p>
 							<p>传真：010-8542543</p>
@@ -106,12 +107,14 @@ export default function Footer() {
 					</Box>
 				</Box>
 			</Box>
+
+			{/* 底部分割线 */}
 			<Divider
 				light={true}
 				sx={{
 					mt: '100px',
 					bgcolor: '#fff',
-					width: '1920px',
+					width: '100vw',
 				}}
 			/>
 			<Box
@@ -133,6 +136,6 @@ export default function Footer() {
 					reserved. 沪ICP备16019765号-3
 				</Typography>
 			</Box>
-		</>
+		</Box>
 	)
 }
