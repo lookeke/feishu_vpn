@@ -1,85 +1,84 @@
 @import '../../config/config';
 
 main {
-	position  : relative;
-	width     : $width;
-	max-width : $max-width;
-	height    : auto;
-	margin    : 0 auto;
+	position: relative;
+	width: $width;
+	max-width: $max-width;
+	height: auto;
+	margin: 0 auto;
 }
 
 .main {
 	/* pc背景图层组 */
 	&-pc {
-		position : absolute;
-		top      : -150px;
-		right    : 0;
+		position: absolute;
+		top: -150px;
+		right: 0;
 
 		/* pc背景图 */
 		&-img {
-			position  : absolute;
-			right     : 0;
-			z-index   : 2;
-			transform : translateX(11%);
+			position: absolute;
+			right: 0;
+			z-index: 2;
+			transform: translateX(11%);
 		}
 
 		/* 圆圈背景 */
 		&-bc {
-			position  : absolute;
-			top       : 45px;
-			right     : -45px;
-			z-index   : 1;
-			transform : translateX(15%);
+			position: absolute;
+			top: 45px;
+			right: -45px;
+			z-index: 1;
+			transform: translateX(15%);
 		}
 	}
 
 	/* 关于VPN */
 	&-about {
-		width      : $width;
-		margin     : 195px auto 0;
-		text-align : center;
+		width: $width;
+		margin: 195px auto 0;
+		text-align: center;
 	}
 
 	/* 合作伙伴 */
 	&-cooperativePartner {
-		display         : inline-flex;
-		justify-content : space-between;
-		width           : $width;
-		margin-top      : 88px;
+		display: inline-flex;
+		justify-content: space-between;
+		width: $width;
+		margin-top: 88px;
 	}
 
 	/* 案例 */
 	&-case {
-		width      : $width;
-		text-align : center;
+		width: $width;
+		text-align: center;
 	}
 
 	&-graphicalRepresentation {
-		width      : $width;
-		margin-top : 150px;
-
+		width: $width;
+		margin-top: 150px;
 	}
 
 	&-case-items-box {
-		position : relative;
-		width    : 355px;
-		height   : 256px;
-		background : linear-gradient(#191B31, #394072);
-		border-radius : 16px;
+		position: relative;
+		width: 355px;
+		height: 256px;
+		background: linear-gradient(#191B31, #394072);
+		border-radius: 16px;
 
 		p {
-			position   : absolute;
-			top        : 50%;
-			left       : 50%;
-			z-index    : 3;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 3;
 			display: none;
-			color      : #FFF;
+			color: #FFF;
 			white-space: nowrap;
-			transform  : translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 		}
 
-		&:hover img{
-			opacity : .2;
+		&:hover img {
+			opacity: .2;
 		}
 
 		&:hover p {
@@ -87,34 +86,38 @@ main {
 		}
 
 		&-images {
-			position      : absolute;
-			top           : 0;
-			left          : 0;
-			width : 100%;
-			height : 100%;
-			border-radius : 16px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 16px;
 
 			&:nth-child(2) {
-				margin : 0 28px;
+				margin: 0 28px;
 			}
 		}
 	}
-
 }
 
 .swiper {
-	&-button-next, &-button-prev {
-		position : absolute;
-		top: 0;
-		width    : 45px !important;
-		height   : 40px !important;
-	}
+	&-button-next,
+	&-button-prev {
+		position: absolute;
+		top: 83.5% !important;
+		width: 45px !important;
+		height: 40px !important;
 
-	&-button-next {
-		right : 0;
+		&::after {
+			display: none;
+		}
 	}
 
 	&-button-prev {
-		left : 0;
+		left: -25px !important;
+	}
+
+	&-button-next {
+		right: 0 !important;
 	}
 }

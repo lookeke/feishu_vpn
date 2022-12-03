@@ -11,7 +11,8 @@ import {
 	ThemeProvider,
 	Typography,
 } from '@mui/material'
-import Swiper, { Navigation } from 'swiper'
+import { Navigation } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 // 精选案例-案例1项图片
 import case1ItemsImages1 from '@/assets/images/case1-items-images-1.webp'
@@ -41,14 +42,14 @@ import {
 	typographyTitleTheme as title,
 } from '@/utils/font'
 
-let swiper = new Swiper('.swiper', {
-	modules: [Navigation],
-	loop: true,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-})
+// let swiper = new Swiper('.swiper', {
+// 	modules: [Navigation],
+// 	loop: true,
+// 	navigation: {
+// 		nextEl: '.swiper-button-next',
+// 		prevEl: '.swiper-button-prev',
+// 	},
+// })
 
 // 介绍-列表
 const introduceList: IintroduceList[] = [
@@ -556,20 +557,27 @@ export default function Main() {
 					</Box>
 
 					{/* 案例-列表 */}
-					<Box className="swiper">
-						<Box
-							alt="left"
-							className="swiper-button-prev"
-							component="img"
-							src={left}
-						/>
-						<Box
-							alt="right"
-							className="swiper-button-next"
-							component="img"
-							src={right}
-						/>
-
+					{/* <Box className="swiper"> */}
+					<Box
+						alt="left"
+						className="swiper-button-prev"
+						component="img"
+						src={left}
+					/>
+					<Box
+						alt="right"
+						className="swiper-button-next"
+						component="img"
+						src={right}
+					/>
+					<Swiper
+						loop
+						modules={[Navigation]}
+						navigation={{
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						}}
+					>
 						<List
 							className="swiper-wrapper"
 							sx={{
@@ -578,10 +586,10 @@ export default function Main() {
 						>
 							{/* 案例-列表-子项 */}
 							{caseList.map((item) => (
-								<ListItem
+								<SwiperSlide
 									key={item.id}
 									className="swiper-slide"
-									sx={{
+									style={{
 										display: 'flex',
 										justifyContent: 'space-between',
 										flexDirection: 'column',
@@ -665,10 +673,11 @@ export default function Main() {
 											</Box>
 										))}
 									</Box>
-								</ListItem>
+								</SwiperSlide>
 							))}
 						</List>
-					</Box>
+					</Swiper>
+					{/* </Box> */}
 				</Box>
 
 				{/* 分隔线 */}
