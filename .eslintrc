@@ -53,6 +53,7 @@
 			"error",
 			"always"
 		],
+		// ! 注意
 		//		// 设置代码上行与下行最大的空行
 		//		"no-multiple-empty-lines": [
 		//			"error",
@@ -108,8 +109,8 @@
 		"camelcase": "off",
 		// 关闭最大参数的限制
 		"max-params": "off",
-		// 没有用到的变量, 报警
-		"no-unused-vars": "warn",
+		// ! 没有用到的变量
+		"no-unused-vars": "off",
 		"simple-import-sort/imports": "error",
 		"simple-import-sort/exports": "error",
 		"import/first": "error",

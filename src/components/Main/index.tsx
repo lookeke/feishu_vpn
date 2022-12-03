@@ -41,9 +41,7 @@ import {
 	typographyTitleTheme as title,
 } from '@/utils/font'
 
-//@ts-ignore
-// eslint-disable-next-line no-unused-vars
-const swiper = new Swiper('.swiper', {
+let swiper = new Swiper('.swiper', {
 	modules: [Navigation],
 	loop: true,
 	navigation: {
