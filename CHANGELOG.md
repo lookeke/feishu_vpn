@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/lookeke/feishu_vpn/compare/v1.0.2...v1.0.3) (2022-12-03)
+
+
+### Bug Fixes
+
+* 修复错误 ([ba1a044](https://github.com/lookeke/feishu_vpn/commit/ba1a044aab616025f9c00c94fd172c7006f4c589))
+* 修复错误, 修复Lint错误 ([9e0694e](https://github.com/lookeke/feishu_vpn/commit/9e0694e2973f83302132cdd69f4e60449457d33d))
+
 ### [1.0.2](https://github.com/lookeke/feishu_vpn/compare/v1.0.1...v1.0.2) (2022-11-28)
 
 ### [1.0.1](https://github.com/lookeke/feishu_vpn/compare/v0.9.0...v1.0.1) (2022-11-24)
