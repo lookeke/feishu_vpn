@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/lookeke/feishu_vpn/compare/v1.0.3...v1.1.0) (2022-12-04)
+
+
+### Features
+
+* :speech_balloon: 更新代码仓库文字 ([9e42843](https://github.com/lookeke/feishu_vpn/commit/9e42843aee86790b7e390a720ef150080f76c8da))
+
 ### [1.0.3](https://github.com/lookeke/feishu_vpn/compare/v1.0.2...v1.0.3) (2022-12-03)
 
 
