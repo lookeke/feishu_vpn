@@ -96,7 +96,9 @@ export default function Footer() {
 							<p>
 								官网地址：中国上海市青浦区 徐泾镇华徐公路999号 E通世界北区B栋8楼
 							</p>
-							<p>代码仓库：中国上海市青浦区 徐泾镇华徐公路999号</p>
+							<p>
+								代码仓库：https://github.com/xingkongwangbin/feishuwg/releases/tag/1.0
+							</p>
 							<p>
 								镜像仓库：中国上海市青浦区 徐泾镇华徐公路999号 E通世界北区B栋8楼
 							</p>

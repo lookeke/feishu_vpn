@@ -53,7 +53,6 @@
 			"error",
 			"always"
 		],
-		// ! 注意
 		//		// 设置代码上行与下行最大的空行
 		//		"no-multiple-empty-lines": [
 		//			"error",
@@ -77,15 +76,15 @@
 			}
 		],
 		// 引号
-//		"quotes": [
-//			"error",
-//			"single"
-//		],
+		//		"quotes": [
+		//			"error",
+		//			"single"
+		//		],
 		// JSX 属性引号 单引号: prefer-single, 双引号: prefer-double
-//		"jsx-quotes": [
-//			"error",
-//			"prefer-double"
-//		],
+		//		"jsx-quotes": [
+		//			"error",
+		//			"prefer-double"
+		//		],
 		// 三元换行 "always" 强制, 与Prettier冲突
 		"multiline-ternary": "off",
 		// 块状注释之前有一个空行
@@ -109,8 +108,7 @@
 		"camelcase": "off",
 		// 关闭最大参数的限制
 		"max-params": "off",
-		// ! 没有用到的变量
-		"no-unused-vars": "off",
+		"no-unused-vars": "warn",
 		"simple-import-sort/imports": "error",
 		"simple-import-sort/exports": "error",
 		"import/first": "error",
